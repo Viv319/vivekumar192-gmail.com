@@ -1,0 +1,59 @@
+.container2 span {
+    display: inline-block;
+    vertical-align: middle; /* Aligns items vertically in the middle */
+  }
+  .container2 span img {
+    vertical-align: middle; /* Aligns the image vertically in the middle */
+  }
+  .container2 span.text {
+    margin-left: 10px; /* Adds some space between the image and the text */
+  }
+.container2{
+    margin-bottom: 30px;
+}
+  
+  .layout1, .layout2, .layout3, .layout4 {
+    cursor: pointer;  
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  .layout1 img, .layout2 img, .layout3 img, .layout4 img {
+    margin-right: 8px; /* Adds some space between the image and the text */
+  }
+  
+  .board, .analytics, .setting, .logout{
+    margin: 0; /* Reset margin for paragraphs */
+  }
+  
+  .layout4{
+    /* cursor: pointer; */
+    position: fixed; 
+    bottom: 2rem;
+
+  }
+
+  .logout{
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    color: red;
+  }
+
+  .options{
+    display: flex;
+    justify-content: space-between; /* Ensure equal spacing between the sections */
+    /* align-items: center; */
+    /* margin-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: column; */
+    margin-top: 30px;   
+    gap: 30px;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: center; */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-direction: column;
+  }
+

@@ -1,0 +1,84 @@
+.container {
+    width: 40vw;
+    /* padding: 8vw; */
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: antiquewhite; */
+    
+}
+
+.h2{
+    margin-top: 10vh;
+    font-family: Open Sans;
+    font-size: 33.08px;
+    font-weight: 600;
+    line-height: 45.04px;
+    text-align: center;
+    color: #343434;
+    margin-bottom: 5rem;
+}
+
+.user{
+    width: 25rem;
+    height: 7vh;
+    border: 1.38px solid #D0D0D0;display: flex;
+    align-items: center; /* Align items vertically in the center */
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding-left:1rem;
+  }
+  
+  .user > svg {
+    margin-right: 8px; /* Space between the icon and the input */
+  }
+
+.input{
+    /* width: 25rem;
+    height: 10vh; */
+    /* border-radius: 0.5rem;    
+    margin-bottom: 1rem; */
+    /* padding-left:1rem; */
+    /* border: 1.38px solid #D0D0D0; */
+    border: none !important;;
+    outline: none;
+    flex: 1; /* Allow the input to take the remaining space */
+    padding: 8px; /* Add padding for better appearance */
+    /* border: 1px solid #ccc; Example border */
+    /* border-radius: 4px; Example rounded corners */
+}
+
+.button{
+    background-color: #17A2B8;
+    height: 7vh;
+    border-radius: 2rem;
+    width: 25rem;
+    margin-top: 1rem;
+    color: #FFFFFF;
+    border: none !important;
+    cursor: pointer;  
+}
+
+.footer{
+    margin-top: 1rem;
+    font-weight: 400;
+    font-size: 19.29px;
+    line-height: 26.28px;
+    color: #828282;
+    align-self: center;
+    margin-left: 5%;
+}
+
+.underline{
+    color: #17A2B8;
+    width: 25rem;
+    height: 7vh;
+    margin-top: 1rem;
+    border-radius: 2rem;
+    border: 2px solid #17A2B8; 
+    outline: none;
+    margin-bottom: 10vh;
+    cursor: pointer;  
+}

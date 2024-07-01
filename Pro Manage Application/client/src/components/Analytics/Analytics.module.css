@@ -1,0 +1,68 @@
+.fullPage {
+    width: 90vw;
+    height: 100vh;
+    padding-left: 10vw;
+    background-color: antiquewhite;   
+}
+
+.hearder{
+    width:90vw;
+    height: 10vh;
+    font-family: Open Sans;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 29.96px;
+    color: black;
+    background-color: aquamarine;
+    padding: 20px;
+}
+
+.main{
+    display: flex;
+    flex-direction: row;
+    /* justify-content:space-between */
+    gap: 10rem;
+    width: 100%;
+
+}
+
+.left, .right{
+    width: 19vw;
+    height: 50vh;
+    background: #F9FCFF;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24.51px;
+    color: #000000;
+    padding: 10px;
+    margin-left: 40px;
+
+}
+
+.ul1, .ul2{
+    padding: 0; /* Remove default padding */
+    margin: 20px; 
+    list-style: none;
+}
+
+.ul1 li, .ul2 li {
+    margin-bottom: 10px; /* Adjust spacing between items */
+    position: relative; /* Position relative to use pseudo-element */
+    padding-left: 20px; /* Space for the custom bullet */
+  }
+
+  .custom-bullets li {
+    position: relative; /* Position relative to use pseudo-element */
+    padding-left: 20px; /* Space for the custom bullet */
+  }
+  
+  /* Styling for the custom bullets */
+  .ul1 li::before, .ul2 li::before {
+    content: '•'; /* Unicode character for bullet */
+    color: #90C4CC;
+    position: absolute;
+    left: 0;
+    font-size: 1.5em; /* Adjust size if necessary */
+    line-height: 1; /* Ensure it aligns with the text */
+  }

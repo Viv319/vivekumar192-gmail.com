@@ -1,0 +1,77 @@
+.container {
+    width: 40vw;
+    padding: 8vw;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    /* background-color: antiquewhite; */
+    
+}
+
+.h2{
+    font-family: Open Sans;
+    font-size: 33.08px;
+    font-weight: 600;
+    line-height: 45.04px;
+    text-align: center;
+    color: #343434;
+    margin-bottom: 5rem;
+}
+
+.user{
+    width: 25rem;
+    height: 7vh;
+    border: 1.38px solid #D0D0D0;display: flex;
+    align-items: center; /* Align items vertically in the center */
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    padding-left:1rem;
+  }
+  
+  .user > svg {
+    margin-right: 8px; /* Space between the icon and the input */
+  }
+
+.input{
+    /* width: 25rem;
+    height: 2.5rem; */
+    /* border-radius: 0.5rem;    
+    margin-bottom: 1rem; */
+    /* padding-left:1rem; */
+    /* border: 1.38px solid #D0D0D0; */
+    border: none !important;;
+    outline: none;
+    flex: 1; /* Allow the input to take the remaining space */
+    padding: 8px;
+}
+
+.button{
+    background-color: #17A2B8;
+    height: 2.5rem;
+    border-radius: 2rem;
+    width: 25rem;
+    margin-top: 1rem;
+    color: #FFFFFF;
+    border: none !important;
+    cursor: pointer;  
+}
+
+.footer{
+    margin-top: 1rem;
+    font-weight: 400;
+    font-size: 19.29px;
+    line-height: 26.28px;
+    color: #828282;
+    align-self: center;
+}
+
+.underline{
+    color: #17A2B8;
+    width: 25rem;
+    height: 2.5rem;
+    margin-top: 1rem;
+    border-radius: 2rem;
+    border: 2px solid #17A2B8; 
+    outline: none;
+    cursor: pointer;  
+}
