@@ -4,6 +4,9 @@ import React,{useEffect, useState} from 'react'
 import styles from './TicketDisplay.module.css';
 import {useParams} from "react-router-dom";
 
+
+
+
 export default function TicketDisplay() {
     const { id } = useParams();
 
