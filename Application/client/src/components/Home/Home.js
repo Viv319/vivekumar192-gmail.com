@@ -167,7 +167,6 @@ export default function Home() {
              </div>
 
               <div className={styles.todoTicket}>
-                show all tickets here
                 <TicketDisplay />
               </div>
             

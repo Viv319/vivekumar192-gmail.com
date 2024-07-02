@@ -15,7 +15,7 @@ function TicketForm({ isOpen, onRequestClose, onSave }) {
     priority: '',
     checklist: [],
     selectedOption: null,
-    selectedDate: null,
+    dueDate: null,
     todo: "1",
     backlog: "0",
     progress: "0",
@@ -78,7 +78,7 @@ function TicketForm({ isOpen, onRequestClose, onSave }) {
   const handleDateChange = (date) => {
     setFormData({
       ...formData,
-      selectedDate: date
+      dueDate: date
     });
     setShowDatePicker(false);
   };
@@ -88,7 +88,7 @@ function TicketForm({ isOpen, onRequestClose, onSave }) {
       title: formData.title,
       priority: formData.priority,
       checklist: formData.checklist,
-      dueDate: formData.selectedDate
+      dueDate: formData.dueDate
     };
     onSave(newTicket);
 
@@ -97,6 +97,7 @@ function TicketForm({ isOpen, onRequestClose, onSave }) {
     if (result) {
       alert('Ticket created successfully');
       setFormData(initialFormData); // Reset form after successful creation
+      window.location.reload()
     } else {
       alert('Failed to create ticket');
     }
@@ -109,7 +110,7 @@ function TicketForm({ isOpen, onRequestClose, onSave }) {
   };
 
   useEffect(() => {
-    console.log(formData)
+    // console.log(formData)
   }, [formData]);
 
   const customStyles = {
@@ -169,7 +170,7 @@ function TicketForm({ isOpen, onRequestClose, onSave }) {
           </button>
         </div>
         <div >
-          <span className={styles.checklistSpan}>Checklist {getCheckedItemsCount(formData.checklist)}/{formData.checklist.length})</span> <span style={{ color: "red" }}>*</span>
+          <span className={styles.checklistSpan}>Checklist ({getCheckedItemsCount(formData.checklist)}/{formData.checklist.length})</span> <span style={{ color: "red" }}>*</span>
           <ul>
             {formData.checklist.map((item, index) => (
               <li key={index} className={styles.liInput}>
@@ -200,12 +201,12 @@ function TicketForm({ isOpen, onRequestClose, onSave }) {
         <div style={{display:"flex", width:"95%",  position: "absolute",  bottom: "30px"}}>
           <div style={{border:"1px solid #E2E2E2", width:"185px",height:"45px", borderRadius:"12px"}}>
           <p onClick={() => setShowDatePicker(true)} className={styles.calender}>
-            {formData.selectedDate ? `${formData.selectedDate.toLocaleDateString()}` : 'Select Due Date'}
+            {formData.dueDate ? `${formData.dueDate.toLocaleDateString()}` : 'Select Due Date'}
           </p>
           </div>
           {showDatePicker && (
             <DatePicker
-              selected={formData.selectedDate}
+              selected={formData.dueDate}
               onChange={handleDateChange}
               dateFormat="MM/dd/yyyy"
               onClose={() => setShowDatePicker(false)}
