@@ -12,12 +12,15 @@
 
 .h2{
     font-family: Open Sans;
-    font-size: 33.08px;
-    font-weight: 600;
-    line-height: 45.04px;
-    text-align: center;
-    color: #343434;
-    margin-bottom: 5rem;
+font-size: 22px;
+font-weight: 600;
+line-height: 29.96px;
+
+
+    color: black;
+    margin-bottom: 2rem;
+    /* margin-left: 50px; */
+    margin-top: 20px;
 }
 
 .input{

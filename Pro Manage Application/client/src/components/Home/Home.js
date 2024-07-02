@@ -11,6 +11,8 @@ import minimizeIcon from '../../assets/images/minimizeIcon.png';
 
 export default function Home() {
 
+  // const userId = JSON.parse(localStorage.getItem('token'));
+
   const [filter, setFilter] = useState('this_week');
 
   const navigate = useNavigate();
@@ -50,6 +52,19 @@ export default function Home() {
       setUsername(username);
     }
   }, []);
+
+  // useEffect(()=>{
+  //   const token = localStoreage.getItem('token');
+  //   if(!token) return;
+
+  //   try{
+  //     const decodedToken = jwt_decode(token);
+  //     const userId = decodedToken.userId;
+  //   }
+  //   catch (error) {
+  //     console.error('Error decoding token or fetching ticket details:', error);
+  // }
+  // })
 
   // get current date
   const getCurrentDate = () => {
@@ -153,7 +168,7 @@ export default function Home() {
 
               <div className={styles.todoTicket}>
                 show all tickets here
-                <TicketDisplay/>
+                <TicketDisplay />
               </div>
             
             </div>

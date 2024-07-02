@@ -8,7 +8,14 @@ const app = express();
 // this will let know that you should expect some objects
 app.use(express.json());
 
-app.use(cors());
+app.use(cors(
+  {
+    origin: ['http://deploy-mern-1whq.vercel.app'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true, // allow cookies in requests
+  }
+));
 
 
 

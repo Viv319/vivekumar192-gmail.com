@@ -49,6 +49,7 @@ export default function Login() {
         const result = await loginUser(formData);
         if (result) {
             
+            localStorage.setItem('email', formData.email);
             navigate("/home");
             // navigate("/TicketPost");
             // alert("Login successful");

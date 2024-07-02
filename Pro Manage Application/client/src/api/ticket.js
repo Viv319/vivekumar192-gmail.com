@@ -68,10 +68,10 @@ export const getTicketByUserId = async (userId)=>{
         const token = JSON.parse(localStorage.getItem('token'));
         axios.defaults.headers.common['Authorization'] = token;
 
-        const reqUrl = `${backendUrl}/getByUserId/${userId}`;
+        const reqUrl = `${backendUrl}/getTicket/${userId}`;
         const response = axios.get(reqUrl);
         
-    return (await response)?.data;
+    return (await response)?.data.tickets;
 
 }catch(error){
     console.log(error);
@@ -89,7 +89,7 @@ const updateTicketByUserId = async (ticketId)=>{
         const response = axios.put(reqUrl);
         
         console.log(response)
-        return "ticket updated successfully";
+        return (await response).data
         
     }catch(error){
         console.log(error);

@@ -84,7 +84,7 @@ const getTicketByUserId = async (req, res, next) => {
             });
         }
 
-        res.json({ data: userTickets });
+        res.json({ tickets: userTickets });
     }
     catch (error){
         next(error);

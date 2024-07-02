@@ -18,9 +18,7 @@ export default function SettingPage() {
   }
 
   const handleLogout=() => {
-    localStorage.removeItem("token");
-    localStorage.removeItem('hasToastShown');
-    localStorage.removeItem('name');
+    localStorage.clear();
     navigate("/")
   }
 

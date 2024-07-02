@@ -1,7 +1,7 @@
 .fullPage {
     width: 90vw;
     height: 100vh;
-    background-color: antiquewhite;   
+    /* background-color: antiquewhite;    */
 }
 
 .header, .header2{
@@ -73,7 +73,7 @@
     /* z-index: 6; */
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgb(143, 65, 174);
+    /* background-color: rgb(143, 65, 174); */
 }
 
 .footer{

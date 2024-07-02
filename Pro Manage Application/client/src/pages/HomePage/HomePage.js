@@ -18,9 +18,7 @@ export default function HomePage() {
   }
 
   const handleLogout=() => {
-    localStorage.removeItem("token");
-    localStorage.removeItem('hasToastShown');
-    localStorage.removeItem('name');
+    localStorage.clear();
     navigate("/")
   }
 
@@ -48,7 +46,7 @@ export default function HomePage() {
                         width: "10vw",
                         // zIndex: 10,
                         height: "100vh",
-                        backgroundColor: "#17A2B8",
+                        // backgroundColor: "#17A2B8",
                         justifyContent:"center",
                         padding:"1rem",
                         alignItems: "center",}}>

@@ -2,7 +2,7 @@
     width: 90vw;
     height: 100vh;
     padding-left: 10vw;
-    background-color: antiquewhite;   
+    /* background-color: antiquewhite;    */
 }
 
 .hearder{
@@ -13,8 +13,9 @@
     font-size: 22px;
     line-height: 29.96px;
     color: black;
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     padding: 20px;
+    margin-left: 30px;
 }
 
 .main{
