@@ -7,8 +7,11 @@ import TicketPostPage from './pages/TicketPostPage/TicketPostPage';
 import SettingPage from './pages/Setting/SettingPage';
 import AnalyticsPage from './pages/Analytics/AnalyticsPage';
 import TicketDisplay from './components/TicketDisplay/TicketDisplay';
+import axios from 'axios';
 
 function App() {
+  axios.defaults.withCredentials = true;
+  // const 
   return (
     <BrowserRouter>
       <Routes>
