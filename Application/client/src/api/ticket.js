@@ -68,20 +68,24 @@ export const getTicketByUserId = async (userId)=>{
         const token = JSON.parse(localStorage.getItem('token'));
         axios.defaults.headers.common['Authorization'] = token;
         
-        console.log(userId);
+        // console.log(userId);
         const reqUrl = `${backendUrl}/getTicket/${userId}`;
-        console.log('Request URL:', reqUrl);
+        // console.log('Request URL:', reqUrl);
         const response = await axios.get(reqUrl);
         
-        console.log("after geting response:", response);
-
-        return ( response)?.data.tickets;
-
-    }catch(error){
-    console.log(error);
-    alert("something went wrong at frontend ");
+        if (response.data && response.data.tickets) {
+            return response.data.tickets;
+        } else {
+            // Return an empty array if no tickets are found
+            return [];
+        }
+    } catch (error) {
+        console.log(error);
+        // alert("Something went wrong at frontend.");
+        // Return an empty array in case of error
+        return [];
     }
-}
+};
 
 // const updateTicketByTicketId = async (ticketId)=>{
 //     try{

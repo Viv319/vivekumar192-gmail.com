@@ -17,10 +17,10 @@ export default function TicketDisplay ({ status }) {
 
         const fetchTicketById = async () => {
             try {
-                console.log(usernameId);
+                // console.log(usernameId);
                 const result = await getTicketByUserId(usernameId);
                 setTicketDetails(result);
-                console.log(result);
+                // console.log(result);
             } catch (error) {
                 console.error('Error fetching ticket details:', error);
             }
@@ -158,7 +158,7 @@ export default function TicketDisplay ({ status }) {
                     </div>
                 ))
             ) : (
-                <p>No tickets found.</p>
+                <></>
             )}
         </div>
     );
