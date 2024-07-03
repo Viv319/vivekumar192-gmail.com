@@ -91,7 +91,7 @@ const getTicketByUserId = async (req, res, next) => {
     }
 }
 
-const updateTicketByUserId = async (req, res, next) => {
+const updateTicketByTicketId = async (req, res, next) => {
     try {
         const { ticketId } = req.params;
         const { title, priority, checklist, dueDate, todo, backlog, progress, done } = req.body;
@@ -104,12 +104,13 @@ const updateTicketByUserId = async (req, res, next) => {
             });
         }
 
+        // Create an object with the fields to be updated
+        const updatedFields = { title, priority, checklist, dueDate, todo, backlog, progress, done };
+
         // Update the ticket
         const updatedTicket = await Ticket.findByIdAndUpdate(
             ticketId,
-            {
-                $set: { title, priority, checklist, dueDate, todo, backlog, progress, done },
-            },
+            { $set: updatedFields },
             { new: true }
         );
 
@@ -122,6 +123,7 @@ const updateTicketByUserId = async (req, res, next) => {
 const getTicketByTicketId = async (req, res, next) => {
     try {
         const { ticketId } = req.params;
+        
         const ticket = await Ticket.findById(ticketId);
         
         if (!ticket) {
@@ -143,6 +145,6 @@ module.exports = {
     deleteTicket,
     getAllTickets,
     getTicketByUserId,
-    updateTicketByUserId,
+    updateTicketByTicketId,
     getTicketByTicketId,
 }

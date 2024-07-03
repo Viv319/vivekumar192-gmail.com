@@ -2,16 +2,12 @@ import {React, useState, useEffect} from 'react'
 import styles from "./Home.module.css"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import TicketPost from '../TicketPost/TicketPost.js';
 import {Navigate, useNavigate} from "react-router-dom";
-import Modal from 'react-modal';
 import TicketForm from '../TicketForm/TicketForm.js';
 import TicketDisplay from '../TicketDisplay/TicketDisplay.js';
 import minimizeIcon from '../../assets/images/minimizeIcon.png';
 
 export default function Home() {
-
-  // const userId = JSON.parse(localStorage.getItem('token'));
 
   const [filter, setFilter] = useState('this_week');
 
@@ -53,19 +49,6 @@ export default function Home() {
     }
   }, []);
 
-  // useEffect(()=>{
-  //   const token = localStoreage.getItem('token');
-  //   if(!token) return;
-
-  //   try{
-  //     const decodedToken = jwt_decode(token);
-  //     const userId = decodedToken.userId;
-  //   }
-  //   catch (error) {
-  //     console.error('Error decoding token or fetching ticket details:', error);
-  // }
-  // })
-
   // get current date
   const getCurrentDate = () => {
     const today = new Date();
@@ -86,14 +69,6 @@ export default function Home() {
     return `${day}${daySuffix(day)} ${month}, ${year}`;
   };
 
-  const clickPlus = () => {
-    // <TicketPost></TicketPost>
-
-    console.log('clicked plus');
-    navigate('/TicketPost');
-  };
-
-  // 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [tickets, setTickets] = useState([]);
 
@@ -126,16 +101,13 @@ export default function Home() {
         </div>
         <div className={styles.header2}>
           <span className={styles.board}>Board</span>
-          {/* <span className={styles.filter}> */}
-
-          {/* <label className={styles.filter} htmlFor="filterSelect">Select Filter:</label> */}
+          
           <select className={styles.filter} id="filterSelect" value={filter} onChange={handleFilterChange}>
             <option value="today">Today</option>
             <option value="this_week">This Week</option>
             <option value="this_month">This Month</option>
           </select>
           
-          {/* </span> */}
         </div>
         </div>
 
@@ -149,7 +121,7 @@ export default function Home() {
             
             </div>
             <div className={styles.backlogTicket}>
-              show backlog tickets here
+            <TicketDisplay status="backlog" />
             </div>
             </div>
 
@@ -167,13 +139,13 @@ export default function Home() {
              </div>
 
               <div className={styles.todoTicket}>
-                <TicketDisplay />
+              <TicketDisplay status="todo" />
               </div>
             
             </div>
 
           
-            <div className={styles.BigProgress}>
+          <div className={styles.BigProgress}>
           <div className={styles.Progress}>
             
             <span className={styles.subHeading}>Progress</span> 
@@ -181,7 +153,7 @@ export default function Home() {
             
             </div>
             <div className={styles.backlogTicket}>
-              show backlog tickets here
+            <TicketDisplay status="progress" />
             </div>
             </div>
 
@@ -192,8 +164,8 @@ export default function Home() {
             <span className={styles.minimize}><img src={minimizeIcon}/></span>
             
             </div>
-            <div className={styles.backlogTicket}>
-              show backlog tickets here
+            <div className={styles.backlogTicketDone}>
+            <TicketDisplay status="done" />
             </div>
             </div>
 

@@ -1,12 +1,12 @@
 .fullPage {
     width: 90vw;
-    height: 100vh;
+    height: 98vh;
     padding-left: 10vw;
     /* background-color: antiquewhite;    */
 }
 
 .hearder{
-    width:90vw;
+    width:88vw;
     height: 10vh;
     font-family: Open Sans;
     font-weight: 600;
@@ -28,7 +28,7 @@
 }
 
 .left, .right{
-    width: 19vw;
+    width: 29vw;
     height: 50vh;
     background: #F9FCFF;
     font-family: Open Sans;

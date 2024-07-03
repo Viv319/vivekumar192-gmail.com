@@ -43,16 +43,20 @@ export const loginUser = async ({email,password})=>{
 export const updateUser = async ({email, name, password})=>{
     try{
         
-        // const token = JSON.parse(localStorage.getItem('token'));
-        // axios.defaults.headers.common['Authorization'] = token;
+        const token = JSON.parse(localStorage.getItem('token'));
+        axios.defaults.headers.common['Authorization'] = token;
         
+        const userId = localStorage.getItem('userId');
 
+        const usernameId = userId ? userId.replace(/"/g, '') : '';
 
             // yaha par mujhe id fetch karna hai tabhi data fetch ho paega;
             // const reqUrl = `${backendUrl}/update/${id}`;
-            const reqUrl =`${backendUrl}/update`;
+            const reqUrl =`${backendUrl}/update/${usernameId}`;
 
-            const responseUser = await axios.get(reqUrl,{
+            console.log(reqUrl);
+
+            const responseUser = await axios.patch(reqUrl,{
                 name, email, password
             });
             

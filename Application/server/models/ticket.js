@@ -4,15 +4,12 @@ const ticketSchema = new mongoose.Schema({
 
     title:{
         type: String,
-        required: true,
     },
     priority:{
         type:String,
-        required: true,
     },
     checklist:{
         type: Array,
-        required: true,
     },
     dueDate:{
         type: Date,

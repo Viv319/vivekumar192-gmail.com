@@ -18,6 +18,7 @@ function App() {
         <Route path='/TicketPost' element={<TicketPostPage/>} />
         <Route path='/home/setting' element={<SettingPage/>} />
         <Route path='/home/analytics' element={<AnalyticsPage/>} />
+        
         <Route path='/ticketDisplay/:id' element={<TicketDisplay/>} />
       </Routes>
     </BrowserRouter>

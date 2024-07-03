@@ -79,27 +79,43 @@ export const getTicketByUserId = async (userId)=>{
 
     }catch(error){
     console.log(error);
-    alert("something went wrong at frontend getTicketByUserId");
+    alert("something went wrong at frontend ");
     }
 }
 
-const updateTicketByUserId = async (ticketId)=>{
-    try{
-        // this is fro authorization purposes
+// const updateTicketByTicketId = async (ticketId)=>{
+//     try{
+//         // this is fro authorization purposes
+//         const token = JSON.parse(localStorage.getItem('token'));
+//         axios.defaults.headers.common['Authorization'] = token;
+        
+//         const reqUrl = `${backendUrl}/updateByUserId/${ticketId}`;
+//         const response = await axios.put(reqUrl);
+        
+//         console.log(response)
+//         return ( response).data.tickets;
+        
+//     }catch(error){
+//         console.log(error);
+//         alert("something went wrong at frontend updateTicketByUserId");
+//     }
+// }
+
+export const updateTicketStatus = async (ticketId, updatedFields) => {
+    try {
         const token = JSON.parse(localStorage.getItem('token'));
         axios.defaults.headers.common['Authorization'] = token;
-        
-        const reqUrl = `${backendUrl}/updateByUserId/${ticketId}`;
-        const response = axios.put(reqUrl);
-        
-        console.log(response)
-        return (await response).data;
-        
-    }catch(error){
+
+        const reqUrl = `${backendUrl}/updateTicket/${ticketId}`;
+        const response = await axios.patch(reqUrl, updatedFields);
+
+        console.log(response);
+        return response.data.tickets;
+    } catch (error) {
         console.log(error);
-        alert("something went wrong at frontend updateTicketByUserId");
+        alert("Something went wrong at frontend updateTicketByUserId");
     }
-}
+};
 
 const deleteTicket = async (ticketId)=>{
     try{

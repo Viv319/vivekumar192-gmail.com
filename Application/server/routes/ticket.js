@@ -9,7 +9,7 @@ router.patch('/update/:id', verifyToken, authController.updateTicket )
 router.get('/getAllTickets', verifyToken, authController.getAllTickets)
 
 router.get('/getTicket/:userId', verifyToken, authController.getTicketByUserId);
-router.put('/updateTicket/:ticketId', verifyToken, authController.updateTicketByUserId);
+router.patch('/updateTicket/:ticketId', verifyToken, authController.updateTicketByTicketId);
 
 // this endpoint is for share option
 router.get('/share/:ticketId', verifyToken, authController.getTicketByTicketId);

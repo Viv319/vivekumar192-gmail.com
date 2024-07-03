@@ -28,3 +28,5 @@ npm install react-icons --save
 
 <!-- to do css for modal -->
 npm install styled-components
+
+npm install date-fns

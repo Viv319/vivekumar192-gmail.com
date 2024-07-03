@@ -1,85 +1,168 @@
-.container{
+.container {
     margin-bottom: 10px;
     background-color: white;
-    width: 26vw;
+    width: 24vw;
     border-radius: 20px;
-    /* height: 50vh; */
-
+    padding: 10px;
 }
-
 
 .body {
     padding: 20px;
 }
 
 
+.pri {
+    margin: 10px;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 12px;
+    text-align: left;
+    color: #707070;
+}
+.pri::before{
+    content: '•'; 
+    color: #FF2473;
+    font-size: 1.5em;
+}
+.lowPriority::before{
+    content: '•'; 
+    color: #63C05B;
+    font-size: 1.5em;
+}
 
+.moderatePriority::before{
+    content: '•'; /* Unicode character for bullet */
+    color: #18B0FF;
+    font-size: 1.5em;
+}
+
+.custom-bullets {
+    position: relative; /* Position relative to use pseudo-element */
+    padding-left: 20px; /* Space for the custom bullet */
+}
+
+.containerTtitle{
+    margin: 10px;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    text-align: left;
+    color: black;
+}
+
+.containerCheck{
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 16.94px;
+    text-align: left;
+    color: black;
+    margin-left: 10px;
+}
 .containerBottom {
     margin-bottom: 10px;
-    border: 1px solid black;
+    border: 1px solid #CF3636;
+    border-radius: 8px;
+    color: white;
+    background-color: #CF3636;
+    width: 70px;
+    height: 22px;
+    font-family: Poppins;
+    text-align: center;
+    
+}
+
+.containerBottomRed {
+    border: 1px solid #CF3636;
+    background-color: #CF3636;
+}
+
+.containerBottomGray {
+    border: 1px solid #DBDBDB;
+    background-color: #DBDBDB;
+}
+
+.containerBottomGreen {
+    border: 1px solid #28A745;
+    background-color: #28A745;
+}
+
+
+
+.checklistSpan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
 }
 
 .dropdown {
     position: relative;
     display: inline-block;
     width: 100%;
+    border: none !important;
 }
 
 .dropdownHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    border: 1px solid #ccc;
     cursor: pointer;
-    background-color: #fff;
-    user-select: none;
 }
 
 .dropdownList {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     background-color: #fff;
     max-height: 200px;
     overflow-y: auto;
     margin-top: 5px;
     padding: 0;
     list-style: none;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: left;
+
 }
 
 .liInput {
     display: flex;
     align-items: center;
     padding: 10px;
+    border: 1px solid #E2E2E2;
+    border-radius: 12px;
+    margin: 10px;
 }
 
 .checklistInput {
     margin-left: 10px;
     flex-grow: 1;
     padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.arrowDown::after {
-    content: "▼";
-    margin-left: 10px;
-}
-
-.arrowUp::after {
-    content: "▲";
-    margin-left: 10px;
+    border: none;
+    outline: none;
 }
 
 .tags {
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
+    
 }
 
 .tag {
-    background-color: #f0f0f0;
     padding: 5px 10px;
-    border-radius: 3px;
-    border: 1px solid #ccc;
+    border-radius: 8px;
+    border:none;
     cursor: pointer;
+    background-color: #EEECEC;
+    border-radius: 8px;
+    font-family: Poppins;
+    text-align: center;
+    color: #767575;
 }

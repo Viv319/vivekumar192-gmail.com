@@ -3,20 +3,22 @@ import styles from './Setting.module.css'
 import { useParams } from "react-router-dom";
 import { updateUser } from '../../api/auth';
 import {jwtDecode} from 'jwt-decode';
+import {Navigate, useNavigate} from "react-router-dom";
 
 export default function Setting() {
 
+  const navigate = useNavigate();
+  
   const [formData, setFormData]= useState({
-    id:"",
     name: "",
-    updateEmail: "",
+    email: "",
     oldPassword: "",
     password: "",
   });
 
   const [errors, setErrors]= useState({
-    updateEmail:null,
-    name:null,
+    email:null,
+    name:null, 
     oldPassword:null,
     password:null
   })
@@ -58,26 +60,18 @@ export default function Setting() {
     // }
 
     // const findUser = await 
-
-    const token = localStorage.getItem('token');
-      if (!token) return null;
-
-      try {
-        const decodedToken = jwtDecode(token);
-        const tokenUserId =  decodedToken.userId;
-        setFormData({...formData, id: tokenUserId, });
-      } catch (error) {
-        console.error('Invalid token', error);
-        return null;
-      }
     
+    if(formData.password === formData.oldPassword){
+      alert("password and old password can not be same");
+    }
 
     const result = await updateUser(formData);
     if(result){
       
 
-      // navigate("/");
+      
       alert("Profile updated successfully");
+      navigate("/");
     }
     else{
       alert(result.message);
@@ -101,13 +95,13 @@ export default function Setting() {
     
     <input
         className={styles.input}
-        name="updateEmail"
+        name="email"
         onChange={handleChange}
-        type={"updateEmail"}
+        type={"email"}
         placeholder="Update Email"
         // leftIcon={<MdupdateEmail/>}
     ></input>
-    {errors.updateEmail?<p style={{color:"red"}}>{errors.updateEmail}</p>:<></>}
+    {errors.email?<p style={{color:"red"}}>{errors.email}</p>:<></>}
     
     <input
         className={styles.input}

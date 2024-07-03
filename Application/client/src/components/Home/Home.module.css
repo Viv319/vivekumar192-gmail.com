@@ -1,6 +1,6 @@
 .fullPage {
     width: 90vw;
-    height: 100vh;
+    height: 98vh;
     /* background-color: antiquewhite;    */
 }
 
@@ -16,7 +16,6 @@
     font-weight: 600;
     font-size: 22px;
     line-height: 33px;
-    /* vertical-align: cap ehigh ; */
     color: black;
     width: 196px;
     height: 15px;
@@ -68,7 +67,7 @@
     top: 0;
     left: 10vw;
     width: 90vw;
-    height: 20vh;
+    height: 15vh;
     display: flex;
     /* z-index: 6; */
     flex-direction: column;
@@ -82,7 +81,8 @@
     height: 80vh;
 
     position: absolute;
-    top: 23vh;
+    /* top: 23vh; */
+    bottom: 0;
     /* left: 0; */
     width: 120%;
 
@@ -99,13 +99,18 @@
     background: #EEF2F5;
     border-radius: 1rem;
     padding: 1rem;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
 }
 
 .Bigtodo, .BigDone{
     width: 28vw;
     background: #EEF2F5;
     border-radius: 1rem;
-
+    overflow: hidden; /* Hide overflow to prevent outer scrollbars */
+    display: flex;
+    flex-direction: column;
 }
 
 .backlog, .todo, .Progress, .Done{
@@ -114,13 +119,20 @@
 }
 .backlogTicket{
     margin-top: 20px;
-    background-color: white;
-}
-.todoTicket{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: -20px;
+    overflow-y: auto; 
+    height: 78vh;
     /* background-color: white; */
 }
+.backlogTicketDone{
+    overflow-y: auto; 
+    height: 78vh;
+}
+.todoTicket{
+    overflow-y: auto; 
+    height: 78vh;
+}
+
 .backlog span , .Progress span, .Done span{
     display: inline-block;
     vertical-align: middle; /* Aligns items vertically in the middle */
@@ -129,7 +141,7 @@
     vertical-align: middle; /* Aligns the image vertically in the middle */
   }
   .backlog span.text, .Progress span.text, .Done span.text{
-    margin-left: 10px; /* Adds some space between the image and the text */
+    margin-left: 10px;
   }
 
 .todo{
@@ -139,18 +151,12 @@
     padding: 1rem;
 }
 
-.Progress{
-    width: 28vw;
-    background: #EEF2F5;
-    border-radius: 1rem;
-}
 
 .Done{
     width: 28vw;
     background: #EEF2F5;
     border-radius: 1rem;
     padding: 1rem;
-
 }
 
 .plus{
