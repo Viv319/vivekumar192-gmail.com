@@ -8,8 +8,13 @@ const app = express();
 // this will let know that you should expect some objects
 app.use(express.json());
 
-app.use(cors());
-
+app.use(cors(
+  {
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods:["POST","PUT","PATCH","DELETE","GET"],
+    credentials:true
+  }
+));
 
 app.get("/",(req,res) => {
   res.send("Hello and Welcome!");})
