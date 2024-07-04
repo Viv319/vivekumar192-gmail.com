@@ -95,7 +95,7 @@ function TicketForm({ isOpen, onRequestClose, onSave }) {
     const result = await createTicket(formData);
 
     if (result) {
-      alert('Ticket created successfully');
+      // alert('Ticket created successfully');
       setFormData(initialFormData); // Reset form after successful creation
       window.location.reload()
     } else {

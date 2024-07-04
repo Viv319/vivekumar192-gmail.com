@@ -40,7 +40,7 @@ export default function TicketPost() {
             const res = await createTicket(formdata);
             // console.log(res);
             if(res){
-                alert("Ticket created successfully");
+                // alert("Ticket created successfully");
                 console.log("congrats")
             }
         } catch (error) {
