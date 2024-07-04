@@ -10,7 +10,7 @@ app.use(express.json());
 
 app.use(cors(
   {
-    origin: ["https://vivekumar192-gmail-com-cuvette-final-evaluation-nov-9dgw9qtqn.vercel.app"],
+    origin: ["https://vivekumar192-gmail-com-cuvette-final-evaluation-nov-rkyfyi3x7.vercel.app"],
     methods:["POST","PUT","PATCH","DELETE","GET"],
     credentials:true
   }
