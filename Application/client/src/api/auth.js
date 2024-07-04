@@ -1,5 +1,5 @@
 import axios from 'axios';
-const backendUrl =`https://vivekumar192-gmail-com-cuvette-final-evaluation-nov-batch.vercel.app/api/v1/auth`;
+const backendUrl =`https://vivekumar192-gmail-com-cuvette-final-evaluation-nov-batch.vercel.app`;
 
 export const registerUser = async ({email,password, name})=>{
     try{
