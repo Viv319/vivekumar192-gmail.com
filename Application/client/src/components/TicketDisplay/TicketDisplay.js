@@ -92,6 +92,28 @@ export default function TicketDisplay ({ status }) {
         }
 
     };
+
+    const formatDate = (ticket) => {
+        const date = new Date(ticket.dueDate);
+        const day = date.getDate()
+    
+    
+        const month = date.toLocaleString('default', { month: 'short' });
+        const year = date.getFullYear();
+
+        const daySuffix = (day) => {
+            if (day > 3 && day < 21) return 'th'; // handle teens
+            switch (day % 10) {
+                case 1: return 'st';
+                case 2: return 'nd';
+                case 3: return 'rd';
+                default: return 'th';
+            }
+        };
+
+        return `${month} ${day}${daySuffix(day)}`;
+    }
+
     const getPriorityClass = (ticket) => {
         if (ticket.priority === 'LOW PRIORITY') {
             return styles.lowPriority;
@@ -139,9 +161,9 @@ export default function TicketDisplay ({ status }) {
                             )}
                         </p>
                         <div className={styles.tags}>  
-                            <p className={`${styles.containerBottom} ${getDueDateClass(ticket)}`}>
-                                {ticket.dueDate ? new Date(ticket.dueDate).toLocaleDateString() : 'N/A'}
-                            </p>
+                        <p className={`${styles.containerBottom} ${getDueDateClass(ticket)}`}>
+                                {ticket.dueDate ? formatDate(ticket) : 'N/A'}
+                        </p>
                             {ticket.backlog == 0 && (
                                 <span className={styles.tag} onClick={() => clickBacklog(ticket._id)}>Backlog</span>
                             )}

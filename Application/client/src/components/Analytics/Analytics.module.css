@@ -31,14 +31,31 @@
     width: 29vw;
     height: 50vh;
     background: #F9FCFF;
-    font-family: Open Sans;
+    /* font-family: Open Sans;
     font-weight: 400;
     font-size: 18px;
     line-height: 24.51px;
-    color: #000000;
+    color: #000000; */
     padding: 10px;
     margin-left: 40px;
 
+}
+
+.liIteam{
+    font-family: Open Sans;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24.51px;
+    text-align: left; 
+
+}
+
+.liCount{
+    font-family: Open Sans;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 27.24px;
+    text-align: left;
 }
 
 .ul1, .ul2{
@@ -48,6 +65,10 @@
 }
 
 .ul1 li, .ul2 li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
     margin-bottom: 10px; /* Adjust spacing between items */
     position: relative; /* Position relative to use pseudo-element */
     padding-left: 20px; /* Space for the custom bullet */

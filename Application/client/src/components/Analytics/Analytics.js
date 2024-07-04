@@ -63,16 +63,16 @@ export default function Analytics () {
         <div className={styles.left}>   
         <ul className={styles.ul1}>
           <li>
-            Backlog Tasks {counts.backlog}
+            <p className={styles.liIteam}>Backlog Tasks</p> <p className={styles.liCount}>{counts.backlog}</p>
           </li>
           <li>
-            To-do Tasks  {counts.todo}
+          <p className={styles.liIteam}>To-do Tasks</p> <p className={styles.liCount}>  {counts.todo}</p>
           </li>
           <li>
-            In-Progress Tasks  {counts.progress}
+          <p className={styles.liIteam}>In-Progress Tasks</p> <p className={styles.liCount}>    {counts.progress}</p>
           </li>
           <li>
-            Completed Tasks {counts.done}
+          <p className={styles.liIteam}>Completed Tasks</p> <p className={styles.liCount}>   {counts.done}</p>
           </li>
         </ul>
 
@@ -81,16 +81,16 @@ export default function Analytics () {
         <div className={styles.right}>  {/* footer */}
         <ul className={styles.ul2}>
           <li>
-            Low Priority  {counts.lowPriority}
+          <p className={styles.liIteam}> Low Priority</p> <p className={styles.liCount}>    {counts.lowPriority}</p>
           </li>
           <li>
-            High Priority {counts.highPriority}
+          <p className={styles.liIteam}> High Priority </p> <p className={styles.liCount}>  {counts.highPriority}</p>
           </li>
           <li>
-            Moderate Priority {counts.moderatePriority}
+          <p className={styles.liIteam}>  Moderate Priority</p> <p className={styles.liCount}>   {counts.moderatePriority}</p>
           </li>
           <li>
-            Due Date Tasks {counts.dueDateTasks}
+          <p className={styles.liIteam}>  Due Date Tasks</p> <p className={styles.liCount}>   {counts.dueDateTasks}</p>
           </li>
         </ul>
 
