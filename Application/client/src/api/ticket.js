@@ -1,5 +1,5 @@
 import axios from 'axios';
-const backendUrl =`https://vivekumar192-gmail-com-cuvette-final-evaluatio-viv319s-projects.vercel.app/api/v1/ticket`;
+const backendUrl =`https://cuvette-final-evaluation-nov-batch-backend.vercel.app/api/v1/ticket`;
                     
 export const createTicket = async ({title, priority, checklist, dueDate, todo, backlog, progress, done,
     }) => {
